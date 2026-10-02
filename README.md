@@ -1,4 +1,4 @@
-# Banalili Resto (no PHP)
+# Banalili Resto
 
 Pure HTML / CSS / JavaScript. No server needed.
 
