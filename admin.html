@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order History — Kuya Mark Banalili Resto</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- staff login -->
+<div class="center" id="login">
+  <form class="card" id="loginForm">
+    <h1>Staff login</h1>
+    <p class="sub">Enter your email to view all orders.</p>
+    <div class="error" id="loginErr"></div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+    </div>
+    <button class="btn" type="submit">Log in</button>
+    <div class="foot"><a href="index.html">← Back to ordering</a></div>
+  </form>
+</div>
+
+<!-- history -->
+<div id="history" style="display:none">
+  <header>
+    <div class="brand">Order History</div>
+    <div><button class="link" id="refresh">Refresh</button><button class="link" id="clear">Clear all</button><button class="link" id="logout">Log out</button></div>
+  </header>
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><b id="sCount">0</b><span>Total orders</span></div>
+      <div class="stat"><b id="sRevenue">₱0</b><span>Total sales</span></div>
+      <div class="stat"><b id="sToday">0</b><span>Orders today</span></div>
+    </div>
+    <div class="field search"><input id="search" placeholder="Search code, name, or contact"></div>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Code</th><th>Date</th><th>Customer</th><th>Items</th><th>Type</th><th>Total</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>

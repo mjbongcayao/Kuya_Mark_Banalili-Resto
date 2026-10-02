@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Order — Kuya Mark Banalili Resto</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="brand">Kuya Mark Banalili Resto</div>
+  <div class="who"><span id="who"></span><button class="link" id="logout">Not you?</button></div>
+</header>
+
+<div class="layout">
+  <section>
+    <div class="tabs" id="tabs"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <aside class="cart">
+    <h2>Your order</h2>
+    <div id="cartList"></div>
+    <div class="total"><span>Total</span><span id="total">₱0</span></div>
+    <div class="type">
+      <button data-type="dine-in" class="active">🍽️ Dine in</button>
+      <button data-type="takeout">🥡 Take out</button>
+    </div>
+    <div class="field">
+      <label for="notes">Notes (optional)</label>
+      <input id="notes" placeholder="e.g. less spicy">
+    </div>
+    <div class="error" id="err"></div>
+    <button class="btn" id="place" disabled>Place order</button>
+  </aside>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="done">
+    <h2>Thank you!</h2>
+    <p>Show this code at the counter.</p>
+    <div class="code" id="code">—</div>
+    <p id="doneMsg"></p>
+    <button class="btn" id="again">Order again</button>
+  </div>
+</div>
+
+<script src="js/menu.js"></script>
+<script src="js/order.js"></script>
+</body>
+</html>

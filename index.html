@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title> Kuya Mark Banalili Resto</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700&family=Work+Sans:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="center">
+  <form class="card" id="form">
+    <h1>Welcome to<br>Kuya Mark Banalili Resto</h1>
+    <p class="sub">Enter your details to start your order.</p>
+    <div class="error" id="err"></div>
+    <div class="field">
+      <label for="name">Full name</label>
+      <input id="name" placeholder="Insert your name" required>
+    </div>
+    <div class="field">
+      <label for="contact">Contact number</label>
+      <input id="contact" placeholder="09XX XXX XXXX" inputmode="tel" required>
+    </div>
+    <button class="btn" type="submit">Start ordering</button>
+    <div class="foot"><a href="admin.html">Staff login</a></div>
+  </form>
+</div>
+<script>
+document.getElementById('form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const contact = document.getElementById('contact').value.trim();
+  const err = document.getElementById('err');
+  if (!name || !/^[0-9+\s-]{7,15}$/.test(contact)) {
+    err.textContent = 'Please enter your name and a valid contact number.';
+    err.style.display = 'block';
+    return;
+  }
+  sessionStorage.setItem('customer', JSON.stringify({ name, contact }));
+  location.href = 'order.html';
+});
+</script>
+</body>
+</html>
